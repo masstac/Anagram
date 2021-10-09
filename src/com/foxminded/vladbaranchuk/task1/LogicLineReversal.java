@@ -2,30 +2,28 @@ package com.foxminded.vladbaranchuk.task1;
 
 public class LogicLineReversal {
 
-    public String reverse(String scannedText) {
-        StringBuilder reversed = new StringBuilder(scannedText);
+    public String[] split(String scannedText){
+        return scannedText.split(" ");
+    }
+
+    public String expandWord(String scannedText) {
+        StringBuilder expandedText = new StringBuilder(scannedText);
         int i = 0;
-        int j = reversed.length() - 1;
-        while(i <= j) {
-            char symbolFirst = reversed.charAt(i);
-            char symbolSecond = reversed.charAt(j);
-            if (Character.isLetter(symbolFirst) & Character.isLetter(symbolSecond)) {
-                char temp = symbolFirst;
-                symbolFirst = symbolSecond;
-                symbolSecond = temp;
-                reversed.setCharAt(i, symbolFirst);
-                reversed.setCharAt(j, symbolSecond);
-                i++;
-                j--;
-            } else if (!Character.isLetter(symbolFirst) & !Character.isLetter(symbolSecond)) {
-                i++;
-                j--;
-            } else if (Character.isLetter(symbolFirst) & !Character.isLetter(symbolSecond)) {
+        int j = expandedText.length() - 1;
+        while (i <= j) {
+            char symbolFirst = expandedText.charAt(i);
+            char symbolSecond = expandedText.charAt(j);
+            if (Character.isLetter(symbolFirst)){
+                if (Character.isLetter(symbolSecond)){
+                    expandedText.setCharAt(i, symbolSecond);
+                    expandedText.setCharAt(j, symbolFirst);
+                    i++;
+                }
                 j--;
             } else {
                 i++;
             }
         }
-        return String.valueOf(reversed);
+        return String.valueOf(expandedText);
     }
 }
