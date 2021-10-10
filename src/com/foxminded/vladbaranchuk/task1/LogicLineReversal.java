@@ -2,7 +2,7 @@ package com.foxminded.vladbaranchuk.task1;
 
 public class LogicLineReversal {
 
-    public String[] split(String scannedText){
+    public String[] split(String scannedText) {
         return scannedText.split(" ");
     }
 
@@ -13,8 +13,8 @@ public class LogicLineReversal {
         while (i <= j) {
             char symbolFirst = expandedText.charAt(i);
             char symbolSecond = expandedText.charAt(j);
-            if (Character.isLetter(symbolFirst)){
-                if (Character.isLetter(symbolSecond)){
+            if (Character.isLetter(symbolFirst)) {
+                if (Character.isLetter(symbolSecond)) {
                     expandedText.setCharAt(i, symbolSecond);
                     expandedText.setCharAt(j, symbolFirst);
                     i++;
