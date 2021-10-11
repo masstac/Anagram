@@ -1,9 +1,17 @@
 package com.foxminded.vladbaranchuk.task1;
 
+import java.util.StringJoiner;
+
 public class LogicLineReversal {
 
-    public String[] split(String scannedText) {
-        return scannedText.split(" ");
+    public String generationStringExpandText(String scannedText) {
+        String[] splitText = scannedText.split(" ");
+        StringJoiner joiner = new StringJoiner(" ");
+        for (String s : splitText) {
+            String reverseEachWordArray = expandWord(s);
+            joiner.add(reverseEachWordArray);
+        }
+        return String.valueOf(joiner);
     }
 
     public String expandWord(String scannedText) {
