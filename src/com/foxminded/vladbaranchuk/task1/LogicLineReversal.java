@@ -4,8 +4,20 @@ import java.util.StringJoiner;
 
 public class LogicLineReversal {
 
-    public String generationStringExpandText(String scannedText) {
-        String[] splitText = scannedText.split(" ");
+    public String validation(String enterText) {
+        if (isNullOeEmptyOrSpaces(enterText)) {
+            return "FAIL";
+        } else {
+            return generationStringExpandText(enterText);
+        }
+    }
+
+    private boolean isNullOeEmptyOrSpaces(String enterText) {
+        return enterText == null || enterText.trim().isEmpty();
+    }
+
+    private String generationStringExpandText( String enterText) {
+        String[] splitText = enterText.split(" ");
         StringJoiner joiner = new StringJoiner(" ");
         for (String s : splitText) {
             String reverseEachWordArray = expandWord(s);
@@ -14,8 +26,8 @@ public class LogicLineReversal {
         return String.valueOf(joiner);
     }
 
-    public String expandWord(String scannedText) {
-        StringBuilder expandedText = new StringBuilder(scannedText);
+    private String expandWord(String enterText) {
+        StringBuilder expandedText = new StringBuilder(enterText);
         int i = 0;
         int j = expandedText.length() - 1;
         while (i <= j) {
