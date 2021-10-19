@@ -8,6 +8,6 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String enterText = in.nextLine();
         LogicLineReversal logic = new LogicLineReversal();
-        System.out.println(logic.validation(enterText));
+        System.out.println(logic.generationStringExpandText(enterText));
     }
 }
