@@ -6,8 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String scannedText = in.nextLine();
+        String enterText = in.nextLine();
         LogicLineReversal logic = new LogicLineReversal();
-        System.out.println(logic.generationStringExpandText(scannedText));
+        System.out.println(logic.generationStringExpandText(enterText));
     }
 }
